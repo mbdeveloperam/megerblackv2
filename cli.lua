@@ -1,5 +1,5 @@
-﻿bot = dofile('/home/root/megerblack/utils.lua')
-json = dofile('/home/root/megerblack/JSON.lua')
+﻿bot = dofile('/home/root/megerblackv2/utils.lua')
+json = dofile('/home/root/megerblackv2/JSON.lua')
 URL = require "socket.url"
 serpent = require("serpent")
 http = require "socket.http"
