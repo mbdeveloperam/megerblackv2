@@ -343,11 +343,9 @@ local hash = SUDO..'settings:'..chat..':'..value
               local keyboard = {}
 							keyboard.inline_keyboard = {
 								{
-                 {text = '⛓تنظیمات⚙️', callback_data = 'groupsettings:'..chat} --,{text = '💵Sales💵', callback_data = 'aboute:'..chat}
-                },{
-				 --{text = '📢Support📢', callback_data = 'supportbot:'..chat} --,{text = '📝Your Adds📝', callback_data = 'youradds:'..chat}
+                 {text = '⛓تنظیمات⚙️', callback_data = 'groupsettings:'..chat} 
 				 -- },{
-				 {text = '📄اطلاعات گروه📙', callback_data = 'groupinfo:'..chat} --,{text = '⚠️Help⚠️', callback_data = 'helpbot:'..chat}
+				 {text = '📄اطلاعات گروه📙', callback_data = 'groupinfo:'..chat}
 				},{
 				{text = '📝راهنما🔖', callback_data = 'helptext:'..chat}
 				},{
@@ -357,132 +355,7 @@ local hash = SUDO..'settings:'..chat..':'..value
             edit(q.inline_message_id,'🌀 برگشتیم به منوی اصلی :',keyboard)
             end
 							------------------------------------------------------------------------
-							if q.data:match('supportbot') then
-                           local chat = '-'..q.data:match('(%d+)$')
-		local keyboard = {}
-							keyboard.inline_keyboard = {
-								{
-                  {text = '🛠Technical Team🛠', callback_data = 'teamfani:'..chat},{text = '📝Offer📝', callback_data = 'enteqadvapishnehad:'..chat}
-                },{
-				 {text = '📱Report a problem📱', callback_data = 'reportproblem:'..chat},{text = '❓Frequently Questions❓', callback_data = 'soalatmotadavel:'..chat}
-				 },{
-                   {text = '🔙 Back To Menu', callback_data = 'firstmenu:'..chat}
-				}
-							}
-              edit(q.inline_message_id,'`Welcome To` *Support🌷*\n`Select From` *Menu*👇',keyboard)
-            end
-							------------------------------------------------------------------------
-							if q.data:match('teamfani') then
-                           local chat = '-'..q.data:match('(%d+)$')
-		local keyboard = {}
-							keyboard.inline_keyboard = {
-								{
-                   {text = '🔙 Back To Menu', callback_data = 'firstmenu:'..chat},{text = '🔙Back', callback_data = 'supportbot:'..chat}
-				}
-							}
-              edit(q.inline_message_id,'[🔖Send Your Msg🔖](https://telegram.me/BanG_Pv_Bot)',keyboard)
-            end
-							------------------------------------------------------------------------
-							if q.data:match('reportproblem') then
-                           local chat = '-'..q.data:match('(%d+)$')
-		local keyboard = {}
-							keyboard.inline_keyboard = {
-								{
-                   {text = '🔙 Back To Menu', callback_data = 'firstmenu:'..chat},{text = '🔙Back', callback_data = 'supportbot:'..chat}
-				}
-							}
-              edit(q.inline_message_id,'[✔️Send Your Problem✔️](https://telegram.me/BanG_Pv_Bot)',keyboard)
-            end
-							------------------------------------------------------------------------
-							if q.data:match('fahedsale') then
-                           local chat = '-'..q.data:match('(%d+)$')
-		local keyboard = {}
-							keyboard.inline_keyboard = {
-								{
-								{text = 'تمدید سرویس انتخابی', callback_data = 'tamdidservice:'..chat},{text = 'خرید طرح جدید', callback_data = 'salegroup:'..chat}
-
-                },{
-				{text = 'گزارشات مالی', callback_data = 'reportmony:'..chat}
-
-                },{
-                   {text = '🔙 Back To Menu', callback_data = 'firstmenu:'..chat},{text = '🔙Back', callback_data = 'supportbot:'..chat}
-				}
-							}
-              edit(q.inline_message_id,'`به بخش خرید گروه،تمدید سرویس،گزارش مالی خوش آمدید.`\n`از منوی زیر انتخاب کنید:`',keyboard)
-            end
-							------------------------------------------------------------------------
-							if q.data:match('tamdidservice') then
-                           local chat = '-'..q.data:match('(%d+)$')
-		local keyboard = {}
-							keyboard.inline_keyboard = {
-								{
-                   {text = '🔙 Back To Menu', callback_data = 'firstmenu:'..chat},{text = '🔙Back', callback_data = 'fahedsale:'..chat}
-				}
-							}
-              edit(q.inline_message_id,'`طرح انتخابی [شما دائمی/مادام العمر(نامحدود روز)] میباشد و نیاز به تمدید طرح ندارید!`',keyboard)
-            end
-							------------------------------------------------------------------------
-							if q.data:match('reportmony') then
-                           local chat = '-'..q.data:match('(%d+)$')
-		local keyboard = {}
-							keyboard.inline_keyboard = {
-								{
-                   {text = '🔙 Back To Menu', callback_data = 'firstmenu:'..chat},{text = '🔙 Back', callback_data = 'fahedsale:'..chat}
-				}
-							}
-              edit(q.inline_message_id,'`🚫Sorry, unfortunately the system is disabled until further notice🚫`',keyboard)
-            end
-			------------------------------------------------------------------------
-							if q.data:match('enteqadvapishnehad') then
-                           local chat = '-'..q.data:match('(%d+)$')
-		local keyboard = {}
-							keyboard.inline_keyboard = {
-								{
-                   {text = '🔙 Back To Menu', callback_data = 'firstmenu:'..chat},{text = '🔙 Back', callback_data = 'supportbot:'..chat}
-				}
-							}
-              edit(q.inline_message_id,'[❗️Send Your Offer❗️](https://telegram.me/BanG_Pv_Bot)',keyboard)
-            end
-							------------------------------------------------------------------------
-							if q.data:match('soalatmotadavel') then
-                           local chat = '-'..q.data:match('(%d+)$')
-		local keyboard = {}
-							keyboard.inline_keyboard = {
-								{
-                   {text = '🔙 Back To Menu', callback_data = 'firstmenu:'..chat},{text = '🔙 Back', callback_data = 'supportbot:'..chat}
-				}
-							}
-              edit(q.inline_message_id,'`🚫Sorry, unfortunately the system is disabled until further notice🚫`',keyboard)
-            end
-							------------------------------------------------------------------------
-						if q.data:match('close') then
-                           local chat = '-'..q.data:match('(%d+)$')
-		local keyboard = {}
-							keyboard.inline_keyboard = {
-								{
-				 {text = '❌خیر❌', callback_data = 'firstmenu:'..chat},{text = '✅بله✅', callback_data = 'closepanel:'..chat}
-                },{
-                   {text = '🔙 برگشت به منوی اصلی💠', callback_data = 'firstmenu:'..chat}
-				}
-							}
-              edit(q.inline_message_id,'⚜️ایا از بستن پنل مطمین هستید؟',keyboard)
-            end
-			-----------------------------------------------------
-						if q.data:match('closepanel') then
-                           local chat = '-'..q.data:match('(%d+)$')
-			edit(q.inline_message_id,'`⚜️پنل با موفقیت بسته شد✅`')
-           end
-							------------------------------------------------------------------------
-							--[[if q.data:match('groupinfo') thens
-                           local chat = '-'..q.data:match('(%d+)$')
-		local keyboard = {}
-							keyboard.inline_keyboard = {
-								{
-                   {text = '🔙 Back To Menu', callback_data = 'firstmenu:'..chat}
-				}
-							}
-              edit(q.inline_message_id,'🚫Sorry, unfortunately the system is disabled until further notice🚫',keyboard)
-            end]]
+							
 							------------------------------------------------------------------------
 							if q.data:match('helpbot') then
                            local chat = '-'..q.data:match('(%d+)$')
@@ -507,7 +380,7 @@ local hash = SUDO..'settings:'..chat..':'..value
                    {text = '🔙 برگشت به منوی اصلی💠', callback_data = 'firstmenu:'..chat}
 				}
 							}
-              edit(q.inline_message_id,'>[راهنمای مالکین گروه(اصلی-فرعی)](https://telegram.me/bang_team)\n*[/#!]options* --دریافت تنظیمات گروه به صورت اینلاین\n*[/#!]setrules text* --تنظیم قوانین گروه\n*[/#!]modset* @username|reply|user-id --تنظیم مالک فرعی جدید برای گروه با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]moddem* @username|reply|user-id --حذف مالک فرعی از گروه با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]ownerlist* --دریافت لیست مدیران اصلی\n*[/#!]managers* --دریافت لیست مدیران فرعی گروه\n*[/#!]setlink link* {لینک-گروه} --تنظیم لینک گروه\n*[/#!]link* دریافت لینک گروه\n*[/#!]kick* @username|reply|user-id اخراج کاربر با ریپلی|یوزرنیم|شناسه\n*_______________________*\n>[راهنمای بخش حذف ها](https://telegram.me/bang_team)\n*[/#!]delete managers* {حذف تمامی مدیران فرعی تنظیم شده برای گروه}\n*[/#!]delete welcome* {حذف پیغام خوش آمدگویی تنظیم شده برای گروه}\n*[/#!]delete bots* {حذف تمامی ربات های موجود در ابرگروه}\n*[/#!]delete silentlist* {حذف لیست سکوت کاربران}\n*[/#!]delete filterlist* {حذف لیست کلمات فیلتر شده در گروه}\n*_______________________*\n>[راهنمای بخش خوش آمدگویی](https://telegram.me/bang_team)\n*[/#!]welcome enable* --(فعال کردن پیغام خوش آمدگویی در گروه)\n*[/#!]welcome disable* --(غیرفعال کردن پیغام خوش آمدگویی در گروه)\n*[/#!]setwelcome text* --(تنظیم پیغام خوش آمدگویی جدید در گروه)\n*_______________________*\n>[راهنمای بخش فیلترگروه](https://telegram.me/bang_team)\n*[/#!]mutechat* --فعال کردن فیلتر تمامی گفتگو ها\n*[/#!]unmutechat* --غیرفعال کردن فیلتر تمامی گفتگو ها\n*[/#!]mutechat number(h|m|s)* --فیلتر تمامی گفتگو ها بر حسب زمان[ساعت|دقیقه|ثانیه]\n*_______________________*\n>[راهنمای دستورات حالت سکوت کاربران](https://telegram.me/bang_team)\n*[/#!]silentuser* @username|reply|user-id --افزودن کاربر به لیست سکوت با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]unsilentuser* @username|reply|user-id --افزودن کاربر به لیست سکوت با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]silentlist* --دریافت لیست کاربران حالت سکوت\n*_______________________*\n>[راهنمای بخش فیلتر-کلمات](https://telegram.me/bang_team)\n*[/#!]filter word --افزودن عبارت جدید به لیست کلمات فیلتر شده\n[/#!]unfilter word* --حذف عبارت جدید از لیست کلمات فیلتر شده\n*[/#!]filterlist* --دریافت لیست کلمات فیلتر شده\n*_______________________*\n>[راهنمای بخش تنظیم پیغام مکرر](https://telegram.me/bang_team)\n*[/#!]floodmax number* --تنظیم حساسیت نسبت به ارسال پیام مکرر\n*[/#!]floodtime* --تنظیم حساسیت نسبت به ارسال پیام مکرر برحسب زمان',keyboard)
+              edit(q.inline_message_id,'*[/#!]options* --دریافت تنظیمات گروه به صورت اینلاین\n*[/#!]setrules text* --تنظیم قوانین گروه\n*[/#!]modset* @username|reply|user-id --تنظیم مالک فرعی جدید برای گروه با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]moddem* @username|reply|user-id --حذف مالک فرعی از گروه با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]ownerlist* --دریافت لیست مدیران اصلی\n*[/#!]managers* --دریافت لیست مدیران فرعی گروه\n*[/#!]setlink link* {لینک-گروه} --تنظیم لینک گروه\n*[/#!]link* دریافت لینک گروه\n*[/#!]kick* @username|reply|user-id اخراج کاربر با ریپلی|یوزرنیم|شناسه\n*_______________________*\n>[راهنمای بخش حذف ها](https://telegram.me/bang_team)\n*[/#!]delete managers* {حذف تمامی مدیران فرعی تنظیم شده برای گروه}\n*[/#!]delete welcome* {حذف پیغام خوش آمدگویی تنظیم شده برای گروه}\n*[/#!]delete bots* {حذف تمامی ربات های موجود در ابرگروه}\n*[/#!]delete silentlist* {حذف لیست سکوت کاربران}\n*[/#!]delete filterlist* {حذف لیست کلمات فیلتر شده در گروه}\n*_______________________*\n>[راهنمای بخش خوش آمدگویی](https://telegram.me/bang_team)\n*[/#!]welcome enable* --(فعال کردن پیغام خوش آمدگویی در گروه)\n*[/#!]welcome disable* --(غیرفعال کردن پیغام خوش آمدگویی در گروه)\n*[/#!]setwelcome text* --(تنظیم پیغام خوش آمدگویی جدید در گروه)\n*_______________________*\n>[راهنمای بخش فیلترگروه](https://telegram.me/bang_team)\n*[/#!]mutechat* --فعال کردن فیلتر تمامی گفتگو ها\n*[/#!]unmutechat* --غیرفعال کردن فیلتر تمامی گفتگو ها\n*[/#!]mutechat number(h|m|s)* --فیلتر تمامی گفتگو ها بر حسب زمان[ساعت|دقیقه|ثانیه]\n*_______________________*\n>[راهنمای دستورات حالت سکوت کاربران](https://telegram.me/bang_team)\n*[/#!]silentuser* @username|reply|user-id --افزودن کاربر به لیست سکوت با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]unsilentuser* @username|reply|user-id --افزودن کاربر به لیست سکوت با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]silentlist* --دریافت لیست کاربران حالت سکوت\n*_______________________*\n>[راهنمای بخش فیلتر-کلمات](https://telegram.me/bang_team)\n*[/#!]filter word --افزودن عبارت جدید به لیست کلمات فیلتر شده\n[/#!]unfilter word* --حذف عبارت جدید از لیست کلمات فیلتر شده\n*[/#!]filterlist* --دریافت لیست کلمات فیلتر شده\n*_______________________*\n>[راهنمای بخش تنظیم پیغام مکرر](https://telegram.me/bang_team)\n*[/#!]floodmax number* --تنظیم حساسیت نسبت به ارسال پیام مکرر\n*[/#!]floodtime* --تنظیم حساسیت نسبت به ارسال پیام مکرر برحسب زمان',keyboard)
             end
 							------------------------------------------------------------------------
 							if q.data:match('videohelp') then
